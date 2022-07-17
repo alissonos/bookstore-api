@@ -2,6 +2,8 @@ package com.oliveira.bookstore.domain;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +31,7 @@ public class Livro implements Serializable{
 	private String nomeAutor;
 	private String texto;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "idcategoria")
 	private Categoria categoria;
