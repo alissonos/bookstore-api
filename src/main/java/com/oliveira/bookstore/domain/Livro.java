@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -36,6 +37,7 @@ public class Livro implements Serializable{
 	
 	@NotEmpty(message = "Campo NOME DO AUTOR é requerido")
 	@Length(min = 3, max = 50, message = "O campo NOME DO AUTOR deve ter entre 3 e 50 caracteres")
+	@Column(name = "nome_autor")
 	private String nomeAutor;
 	
 	@NotEmpty(message = "Campo TEXTO é requerido")
